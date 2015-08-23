@@ -1,0 +1,25 @@
+# built application files
+ *.apk
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+*~
+*.o
+*.d
+
+# generated files
+bin/
+gen/
+.metadata/
+obj/
+ign/
+.settings/
+
+# Local configuration file (sdk path, etc)
+local.properties
+.factorypath
+.classpath
+.project
