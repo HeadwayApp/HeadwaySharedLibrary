@@ -4,15 +4,19 @@ import static ie.headway.app.disk.AppDir.makeAppDirs;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 
 public abstract class HeadwaySplashScreenActivity extends Activity {
 
+	public static final String TAG = "headway.jar";
+	
 	@Override
 	public void onCreate(final Bundle savedInstanceBundle) {
 		super.onCreate(savedInstanceBundle);
-		setContentView(R.layout.activity_splash_screen);
-		makeAppDirs();	//NOTE  Having this across both apps may cause problems, keep that in mind.
-		exitSplashScreen(5000);
+//		Log.d(TAG, "onCreate splash screen."); 
+//		setContentView(R.layout.activity_splash_screen);
+//		makeAppDirs();
+//		exitSplashScreen(5000);
 	}
 	
 	/**
