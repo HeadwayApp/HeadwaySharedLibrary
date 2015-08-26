@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- From: file:/C:/Users/Moses/StudioProjects/HeadwaySharedLibrary/app/build/intermediates/bundles/debug/res/values/values.xml -->
-    <eat-comment/>
-    <color name="headway_blue">#0099D2</color>
-    <string name="splash_content_description">Splash Screen</string>
-</resources>
