@@ -1,0 +1,5 @@
+int color headway_blue 0x7f040000
+int drawable headway 0x7f020000
+int id splashscreen 0x7f060000
+int layout activity_splash_screen 0x7f030000
+int string splash_content_description 0x7f050000
