@@ -71,7 +71,7 @@ public class Step implements Parcelable {
 	
 	/**
 	 * TODO Can't be private because compiler error occurs. I don't remember this happening before,
-	 * this should be investigated further. Th API example code has the ctor as private as well.
+	 * this should be investigated further. The API example code has the ctor as private as well.
 	 * */
 	Step(Parcel in) {
 		this(in.readString(), 

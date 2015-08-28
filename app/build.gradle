@@ -19,5 +19,9 @@ android {
 
 dependencies {
     compile 'com.android.support:support-v4:19.1.0'
-    compile files('libs/simple-xml-2.7.1.jar')
+    compile('org.simpleframework:simple-xml:2.7.+') {
+        exclude module: 'stax'
+        exclude module: 'stax-api'
+        exclude module: 'xpp3'
+    }
 }
