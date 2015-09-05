@@ -12,4 +12,4 @@
 		android:layout_gravity="center"
 		android:contentDescription="@string/splash_content_description" />
 	
-</FrameLayout><!-- From: file:/C:/Users/Moses/StudioProjects/HeadwaySharedLibrary/app/src/main/res/layout/activity_splash_screen.xml -->
+</FrameLayout><!-- From: file:/home/puter/StudioProjects/HeadwaySharedLibrary/app/src/main/res/layout/activity_splash_screen.xml -->
