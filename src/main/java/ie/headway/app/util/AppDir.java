@@ -41,7 +41,7 @@ public enum AppDir {
   /**
    * Directory used to store log files.
    * */
-  LOGS(ROOT.getPath("logs")) {
+  LOGS(ROOT.getPath(".logs")) {
     @Override
     public void empty() throws IOException {
       FileUtils.cleanDirectory(getFile());
