@@ -16,7 +16,7 @@ public abstract class HeadwaySplashScreenActivity extends HeadwayActivity {
   private static long SPLASH_SCREEN_TIMEOUT = 5000L;
 
 	@Override
-	public void onCreate(final Bundle savedInstanceBundle) {
+	protected void onCreate(final Bundle savedInstanceBundle) {
 		super.onCreate(savedInstanceBundle);
 		Thread.setDefaultUncaughtExceptionHandler(new HeadwayExceptionHandler());
 		fixBackStack();

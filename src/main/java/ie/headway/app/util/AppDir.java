@@ -6,6 +6,7 @@ import android.os.Environment;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public enum AppDir {
@@ -29,6 +30,10 @@ public enum AppDir {
 	TMP(ROOT.getPath(".tmp")) {
 		@Override
 		public void empty() throws IOException {
+      final File tmpDir = getFile();
+			if(!tmpDir.exists()) {
+        throw new FileNotFoundException(tmpDir.getAbsolutePath() + " doesn't exist");
+      }
 			FileUtils.cleanDirectory(getFile());
 		}
 	},

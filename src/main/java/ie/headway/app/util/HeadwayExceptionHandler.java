@@ -20,6 +20,7 @@ public class HeadwayExceptionHandler implements Thread.UncaughtExceptionHandler 
 
   @Override
   public void uncaughtException(final Thread thread, final Throwable ex) {
+    Log.e(TAG, "exception occurred", ex);
     logExceptionToFile(ex);
   }
 
