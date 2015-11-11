@@ -3,6 +3,13 @@ package ie.headway.app.xml;
 import java.io.File;
 import java.util.concurrent.TimeoutException;
 
+/**
+ * A {@link PortableStep} which attempts to stall the main thread for four seconds before completing
+ * construction.
+ *
+ * This class was created for convenience at it's use should be looked in to where ever it occurs and
+ * a better solution found.
+ * */
 public class LatentStep extends PortableStep {
 
   public LatentStep() {

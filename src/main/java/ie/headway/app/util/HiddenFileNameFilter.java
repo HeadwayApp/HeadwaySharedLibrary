@@ -10,10 +10,8 @@ import java.io.FilenameFilter;
 public class HiddenFileNameFilter implements FilenameFilter {
 
   @Override
-  public boolean accept(File dir, String filename) {
-    if(!dir.getName().isEmpty() && dir.getName().charAt(0) == '.') {
-      return false;
-    }else if(!filename.isEmpty() && filename.charAt(0) == '.') {
+  public boolean accept(final File dir, final String filename) {
+    if(!filename.isEmpty() && filename.charAt(0) == '.') {
       return false;
     }else {
       return true;

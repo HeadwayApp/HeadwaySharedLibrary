@@ -1,21 +1,24 @@
 package ie.headway.app.util;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 
 import ie.headway.app.R;
 
+import static com.google.common.base.Preconditions.checkArgument;
 import static ie.headway.app.util.AppDir.makeAppDirs;
 
-public abstract class HeadwaySplashScreenActivity extends Activity {
+/**
+ * Activity which should be displayed as the first activity of any Headway app.
+ * */
+public abstract class HeadwaySplashScreenActivity extends HeadwayActivity {
 
   private static long SPLASH_SCREEN_TIMEOUT = 5000L;
 
 	@Override
 	public void onCreate(final Bundle savedInstanceBundle) {
 		super.onCreate(savedInstanceBundle);
-		Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler());
+		Thread.setDefaultUncaughtExceptionHandler(new HeadwayExceptionHandler());
 		fixBackStack();
 		setContentView(R.layout.activity_splash_screen);
 		makeAppDirs();
@@ -41,6 +44,7 @@ public abstract class HeadwaySplashScreenActivity extends Activity {
    * @param delay The amount of time in milliseconds which should elapse before running the runnable.
    * */
   protected void runAfterDelay(final Runnable runnable, final long delay) {
+		checkArgument(delay >= 0, "delay cannot be negative");
     final Handler handler = new Handler();
     handler.postDelayed(runnable, delay);
   }
