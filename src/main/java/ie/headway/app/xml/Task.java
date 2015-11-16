@@ -19,6 +19,11 @@ public class Task implements Parcelable, RequiresDirs {
 
   @Attribute
   private String name;
+  /**
+   * TODO: This madness completely violates all kinds of OOP. This source must be modified in order for
+   * anyone to subclass {@link Step} or {@link PortableStep}. Just make the list only of type Step and cast
+   * any deserialised Step to whatever it's meant to be after deserialisation, you swine!
+   * */
   @ElementListUnion({
       @ElementList(entry = "step", inline = true, type = Step.class),
       @ElementList(entry = "portable_step", inline = true, type = PortableStep.class)
@@ -26,7 +31,7 @@ public class Task implements Parcelable, RequiresDirs {
   private List<Step> steps;
 
   /**
-   * TODO: Does this constructor have to be ```public```,
+   * TODO: Does this constructor have to be {@code public},
    * set it to the most restricted possible access modifier that still works with Simple.
    */
   public Task() {

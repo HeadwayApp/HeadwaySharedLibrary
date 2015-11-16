@@ -20,7 +20,7 @@ public class PortableStep extends Step {
   public PortableStep() {
   }
 
-  public PortableStep(String text, String imagePath, String audioPath) {
+  public PortableStep(final String text, final String imagePath, final String audioPath) {
     super(text, artefisePath(imagePath), artefisePath(audioPath));
   }
 
