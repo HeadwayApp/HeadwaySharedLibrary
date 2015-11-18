@@ -1,1 +1,8 @@
 headway_release.keystore
+.gradle/
+.idea/
+app/build/
+build/
+gradle.properties
+local.properties
+*.iml
