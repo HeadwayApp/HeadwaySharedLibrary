@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">HeadwaySharedLibrary</string>
     <string name="splash_content_description">Splash Screen</string>
-
     <color name="headway_blue">#0099D2</color>
 </resources>

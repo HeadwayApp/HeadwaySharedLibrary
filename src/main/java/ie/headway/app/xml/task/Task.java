@@ -1,4 +1,4 @@
-package ie.headway.app.xml;
+package ie.headway.app.xml.task;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -13,6 +13,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ie.headway.app.util.AppDir;
+import ie.headway.app.xml.step.PortableStep;
+import ie.headway.app.util.RequiresDirs;
+import ie.headway.app.xml.step.Step;
 
 @Root
 public class Task implements Parcelable, RequiresDirs {
@@ -65,6 +68,24 @@ public class Task implements Parcelable, RequiresDirs {
 
   public int getStepCount() {
     return steps.size();
+  }
+
+  public File getTaskXmlFile() {
+    final File taskFile = AppDir.ROOT.getFile(name, "task.xml");
+    return taskFile;
+  }
+
+  public boolean doesTaskExist() {
+    final File taskXmlFile = getTaskXmlFile();
+    return taskXmlFile.exists();
+  }
+
+  public static Task newInstance(final String taskName) throws TaskAlreadyExistsException {
+    final List<Step> stepsLst = new ArrayList<>(10);
+    final Task task = new Task(taskName, stepsLst);
+    final boolean taskExists = task.doesTaskExist();
+    if(taskExists) throw new TaskAlreadyExistsException("task " + taskName + "already exists");
+    return task;
   }
 
   @Override

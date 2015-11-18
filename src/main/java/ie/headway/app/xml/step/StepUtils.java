@@ -1,4 +1,4 @@
-package ie.headway.app.xml;
+package ie.headway.app.xml.step;
 
 import org.apache.commons.io.FileUtils;
 
@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.IOException;
 
 import ie.headway.app.util.AppDir;
+import ie.headway.app.xml.task.Task;
 
 public final class StepUtils {
 

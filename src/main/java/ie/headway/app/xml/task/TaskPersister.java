@@ -1,10 +1,10 @@
-package ie.headway.app.xml;
+package ie.headway.app.xml.task;
 
 import org.simpleframework.xml.core.Persister;
 
 import java.io.File;
 
-import ie.headway.app.util.AppDir;
+import ie.headway.app.xml.SpecialSerializer;
 
 import static com.google.common.base.Preconditions.checkState;
 
@@ -29,7 +29,8 @@ public class TaskPersister extends Persister implements SpecialSerializer<Task> 
   @Override
   public Task read() throws TaskNotFoundException {
     checkState(mTaskName != null, "task name is null");
-    final File taskXmlFile = getTaskXmlFile(mTaskName);
+    final Task task = new Task(mTaskName, null);
+    final File taskXmlFile = task.getTaskXmlFile();
     if(!taskXmlFile.exists()) throw new TaskNotFoundException(taskXmlFile + " does not exist");
 
     try {
@@ -47,22 +48,12 @@ public class TaskPersister extends Persister implements SpecialSerializer<Task> 
    * */
   @Override
   public void write(final Task task) throws RuntimeException {
-    final File fileXmlFile = getTaskXmlFile(task);
+    final File fileXmlFile = task.getTaskXmlFile();
     try {
       write(task, fileXmlFile);
     } catch (Exception e) {
       throw new RuntimeException("couldn't serialize " + task, e);
     }
-  }
-
-  private static File getTaskXmlFile(final String taskName) {
-    final File taskFile = AppDir.ROOT.getFile(taskName, "task.xml");
-    return taskFile;
-  }
-
-  private static File getTaskXmlFile(final Task task) {
-    final String taskName = task.getName();
-    return getTaskXmlFile(taskName);
   }
 
 }

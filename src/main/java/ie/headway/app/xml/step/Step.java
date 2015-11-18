@@ -1,4 +1,4 @@
-package ie.headway.app.xml;
+package ie.headway.app.xml.step;
 
 import android.os.Parcel;
 import android.os.Parcelable;
