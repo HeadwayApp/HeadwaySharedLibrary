@@ -15,7 +15,7 @@ public final class StepUtils {
   /**
    * TODO: Quick impl, needs refactoring.
    * */
-  public static PortableStep contextualiseStep(final Step step, final Task task) {
+  public static PortableStep contextualiseStep(final Task task, final Step step) {
     final File imgFile = new File(step.getImagePath());
     final File newImg = AppDir.ROOT.getFile(task.getName(), "imgs", task.getStepCount() + ".jpg");
 

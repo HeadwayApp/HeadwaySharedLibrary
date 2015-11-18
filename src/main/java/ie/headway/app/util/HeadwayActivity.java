@@ -26,8 +26,10 @@ public class HeadwayActivity extends Activity {
   private void emptyTmpDir() {
     try {
       AppDir.TMP.empty();
-    } catch (IOException e) {
-      Log.w(TAG, "couldn't empty tmp dir at " + AppDir.TMP.getPath());
+    } catch (IOException ioe) {
+      final String tmpDirPath = AppDir.TMP.getPath();
+      final String logMsg = "couldn't empty tmp dir at " + tmpDirPath;
+      Log.w(TAG, logMsg, ioe);
     }
   }
 
